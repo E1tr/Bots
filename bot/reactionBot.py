@@ -1,7 +1,12 @@
 import discord
 from discord.ext import commands
 import requests
-import keys
+import os
+from dotenv import load_dotenv
+
+
+
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.default()
 intents.reactions = True
@@ -80,4 +85,4 @@ async def on_raw_reaction_remove(payload):
                 await member.remove_roles(role)
                 print(f'Rol {role.name} removido de {member.name}')
 
-bot.run(keys.discord)
+bot.run(TOKEN)
