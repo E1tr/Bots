@@ -1,1 +1,1 @@
-worker: python bot_vicio.py
+worker: python bot/reactionBot.py
